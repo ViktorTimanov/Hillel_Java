@@ -23,14 +23,14 @@ public class TwoDimArray {
         };
         int[] arrayMain = array[array.length - 1];
         int[] arraySecond = array[array.length - 1];
-        for (int i = 0; i < array.length - 1; i++){
-            for (int j = 0; j < array[i].length - 1; j++){
-                arrayMain[i] = array[i][j];
-                i++;
+        for (int[] ints : array) {
+            for (int j = 0; j < ints.length; j++) {
+                arrayMain[j] = ints[j];
+                arraySecond[j] = ints[array.length - 1 - j];
             }
         }
-        for (int element: arrayMain){
-            System.out.print(element + " ");
-        }
+        ArrayLib.printArray(arrayMain);
+        System.out.println();
+        ArrayLib.printArray(arraySecond);
     }
 }
